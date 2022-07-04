@@ -9,7 +9,10 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  console.log(process.env);
+  const userName = process.env.MY_NAME_IS;
+  console.log("userName: (" + userName + ")");
+  res.send('Hello Wooooorld! ' + userName);
 });
 app.get('/special', (req, res) => {
   res.send('Thank you for your special request');

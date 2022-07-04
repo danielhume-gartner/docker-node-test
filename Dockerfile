@@ -15,5 +15,9 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+# Import and set Env Vars
+ARG MY_NAME_IS=Kevin
+ENV MY_NAME_IS=$MY_NAME_IS
+
 EXPOSE 8080
 CMD [ "node", "server.js" ]
